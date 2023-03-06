@@ -111,43 +111,6 @@ la commande 70210 :*/
 SELECT e.numcom,`datcom` , f.numfou FROm fournis as f JOIN entcom as e on e.`numfou` = f.numfou join ligcom as l on e.numcom = l.numcom where l.numcom = 70210; 
 
 
-
-/*14. Dans les articles susceptibles d’être vendus, lister les articles moins
-chers (basés sur Prix1) que le moins cher des rubans (article dont le
-premier caractère commence par R). On affichera le libellé de l’article
-et prix1*/
-/*
-SELECT p.codart FROM `produit`as p
-right join vente as v on v.codart = p.codart
-where p.codart like "R%" where prix1 > ??
-*/
-/* Le produit ref like "R%" n'as pas de prix*/
-
-
-/*15. Éditer la liste des fournisseurs susceptibles de livrer les produits
-dont le stock est inférieur ou égal à 150 % du stock d'alerte. La liste est
-triée par produit puis fournisseur
-
-
-
-16. Éditer la liste des fournisseurs susceptibles de livrer les produit dont
-le stock est inférieur ou égal à 150 % du stock d'alerte et un délai de
-livraison d'au plus 30 jours. La liste est triée par fournisseur puis
-produit
-
-17. Avec le même type de sélection que ci-dessus, sortir un total des
-stocks par fournisseur trié par total décroissant
-
-18. En fin d'année, sortir la liste des produits dont la quantité réellement
-commandée dépasse 90% de la quantité annuelle prévue.
-
-19. Calculer le chiffre d'affaire par fournisseur pour l'année 93 sachant
-que les prix indiqués sont hors taxes et que le taux de TVA est 20%.
-/*
-20. Existe-t-il des lignes de commande non cohérentes avec les produits
-vendus par les fournisseurs. ?
-
-*/
 /*
 VIEWS 
 
@@ -259,11 +222,6 @@ END |
 DELIMITER ;
 
 
-
-
-
-
-
 /*
 
 Exercices
@@ -316,7 +274,7 @@ END |
 DELIMITER ;
 
 
-TRIGGERS ON CP 
+--TRIGGERS ON CP 
 /*Avoir un trigger qui met à jour le total de la commande a l’ajout d’un produits
 Travail à réaliser
     1. Mettez en place ce trigger, puis ajoutez un produit dans une commande, vérifiez que le champ total est bien mis à jour.*/
@@ -460,30 +418,6 @@ where p.codart like "R%" where prix1 > ??
 /* Le produit ref like "R%" n'as pas de prix*/
 
 
-/*15. Éditer la liste des fournisseurs susceptibles de livrer les produits
-dont le stock est inférieur ou égal à 150 % du stock d'alerte. La liste est
-triée par produit puis fournisseur
-
-
-
-16. Éditer la liste des fournisseurs susceptibles de livrer les produit dont
-le stock est inférieur ou égal à 150 % du stock d'alerte et un délai de
-livraison d'au plus 30 jours. La liste est triée par fournisseur puis
-produit
-
-17. Avec le même type de sélection que ci-dessus, sortir un total des
-stocks par fournisseur trié par total décroissant
-
-18. En fin d'année, sortir la liste des produits dont la quantité réellement
-commandée dépasse 90% de la quantité annuelle prévue.
-
-19. Calculer le chiffre d'affaire par fournisseur pour l'année 93 sachant
-que les prix indiqués sont hors taxes et que le taux de TVA est 20%.
-
-20. Existe-t-il des lignes de commande non cohérentes avec les produits
-vendus par les fournisseurs. ?*/
-
-
 /*
 VIEWS 
 
@@ -593,12 +527,6 @@ CREATE TRIGGER insert_station AFTER INSERT ON station
         END IF;
 END | 
 DELIMITER ;
-
-
-
-
-
-
 
 
 /*
