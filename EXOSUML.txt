@@ -1,0 +1,99 @@
+DÉMARCHE AGILE
+
+Synthèse
+Répondez aux questions suivantes :
+
+    • Donnez une définition de l'agilité
+Méthode dont la conception est fragmentée en objectifs à courts termes incluant le client dans l’avancée de la conception. Augmente la flexibilité et la souplesse d’une équipe. Développer en méthode agile se fait en multiples sprint ou la transparence est de mise et ou les inspections et tests se font à chaque fin de sprint. 
+
+    • Pourquoi l'Extreme Programming ?
+La programmation extrême vise à rendre le projet plus flexible et ouvert au changement en introduisant des valeurs de base, des principes et des pratiques. Les principes de cette méthode existent dans l'industrie du logiciel depuis des dizaines d'années et dans les méthodes de management depuis encore plus longtemps.
+
+    • Quels avantages y a-t'il à utiliser SCRUM ?
+L’utilisation de SCRUM permet de rendre le projet par « phases » au client et de fait de pouvoir rapidement montrer un mvp
+
+    • Sprint et intégration continue, expliquez le fonctionnement d'un sprint
+Un sprint est une sorte de calendrier à court terme d’un premier rendu. Plusieurs sprint permettent de gerer un cycle de conception en incluant au maximum un client. 
+
+    • TDD :(Test Driven Development), recherchez des informations pour expliquer le principe.
+Le TDD renvoie a une technique de développement logiciel qui vise a réduire les anomalies d’une application en favorisant la mise en œuvre fréquente de tests. Une politique de test first, en cohérence avec les méthodes agiles, qui pousse les programmeurs a faire preuve de plus de rigueur et a corriger en quasi temps réel les bugs et autres erreurs dans le code source. 
+
+
+
+
+Utiliser des diagrammes UML
+
+
+A partir du cas Médiathèque
+
+    1. Identifiez les acteurs.
+Trouver les acteurs : Qui est intéressé par le besoin ? 
+			Qui entre l’information, qui l’utilise, qui la détruit ? 
+			Qui utilise cette fonction ? 
+			Quels acteurs ont besoin de la fonction ? 
+			Un acteur joue t’il plusieurs rôle ? 
+
+Un Usager → emprunte des livres Un lecteur → peut lire des livres 
+Du personnel → enregistre de nouveau documents , enregistre les emprunts,consulter situation lecteur.
+Des bénévoles → enregistre les emprunts, peut voir les emprunts sur un certaine période, consulter situation lecteur.
+
+    2. Ensuite vous identifiez les différents cas d'usage sur le cas Médiathèque. 
+Un Usager peut : 
+			→ posséder une carte de lecteur
+			→ emprunter un livre
+			→ emprunter un CD-Rom
+			→ emprunter un microfilm
+			→ consulter la liste des documents disponibles dans la mediathèque
+			→ emprunter jusqu’à 5 items simultanément 
+			→ s’enregistrer en temps que nouveau lecteur
+Un Bénévole peut : 
+			→ Être accrédité sur une durée limité
+			→ enregistrer un prêt 
+Un membre du Personnel peut : 
+			→ consulter une carte de lecteur 
+			→ prendre une caution d’un usager
+			→ consulter l’état des salle avec écran 
+			→ acheter des documents
+			→ enregistrer un nouveau document
+			→ inscrire un nouvel usager
+			→ enregistrer un prêt
+			→ consulter le liste « état » des documents 
+			→ modifier les caractéristique d’un lecteur 
+			→ demander une relance a un lecteur 
+			→ consulter la situation d’un lecteur 
+			→ mettre hors service un document abîmé ou volé
+
+    3. Écrivez le scénario principal et les scénarios alternatifs pour le cas d'usage qui concerne l'emprunt d'une ressource.
+      FLOT NOMINAL 
+    • Usager prends un livre → l’usager présente sa carte de lecteur → la carte est valide →le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est négatif → le personnel/bénévole génère une fiche de prêt →  le délais de 4 semaines est respecté → le livre est en bon état.
+
+    • Usager prends un microfilm → l’usager présente sa carte de lecteur → la carte est valide →le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est négatif → le personnel consulter la liste des salle de visionnages →  un écran de lecture est libre → l’usager donne une caution → l’usager retourne le microfilm → le microfilm est dans un bon état→ la caution est retournée. 
+
+    • Usager prends un CD-Rom → l’usager présente sa carte de lecteur → la carte est valide →le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est négatif → l’employé référence l’emprunt par n°lecteur et cote document pour emprunt à domicile.→ l’usager donne une caution → le personnel/bénévole génère une fiche de prêt →  retour du CD-Rom avant le délais de 4 semaines → la caution est retournée.
+
+
+      FLOT ALTERNATIF 
+    • Usager prends un livre → 
+        ◦ L’usager présente sa carte de lecteur → la carte est invalide → le prêt est annulé.
+      
+        ◦  L’usager présente sa carte de lecteur → la carte est valide→le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est positif → le prêt est annulé.
+        ◦ L’usager présente sa carte de lecteur → la carte est valide →le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est négatif  → le personnel/bénévole génère une fiche de prêt → non-respect du  le délais de 4 semaines est respecté → le personnel demande une relance
+        ◦ l’usager présente sa carte de lecteur → la carte est valide →le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est négatif → le personnel/bénévole génère une fiche de prêt →  le délais de 4 semaines est respecté → le livre est en mauvais état → le personnel consigne le livre comme volé détérioré ou perdu. 
+
+    • Usager prends un microfilm → 
+        ◦ L’usager présente sa carte de lecteur → la carte est invalide → le prêt est annulé.
+        ◦  L’usager présente sa carte de lecteur → la carte est valide→le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est positif → le prêt est annulé.
+        ◦ le personnel consulter la liste des salle de visionnages →  Aucune salle de visionnage n’est libre  → le prêt est annulé,
+        ◦  l’usager donne une caution → l’usager ne retourne pas le microfilm → le microfilm est dans un mauvais état→ la caution est encaissée → le microfilm est répertorié comme volé perdu ou détérioré. 
+
+    • Usager prends un CD-Rom → 
+        ◦ L’usager présente sa carte de lecteur → la carte est invalide → le prêt est annulé.
+        ◦ L’usager présente sa carte de lecteur → la carte est invalide → le prêt est annulé.
+        ◦  L’usager présente sa carte de lecteur → la carte est valide→le système vérifie qu’il n’y a pas 5 autres emprunts en cours → le résultat est positif → le prêt est annulé.
+        ◦  l’employé référence l’emprunt par n°lecteur et cote document pour emprunt à domicile.→ l’usager donne une caution → le personnel/bénévole génère une fiche de prêt → non-respect du  le délais de 4 semaines est respecté → le personnel demande une relance
+        ◦   retour du CD-Rom avant le délais de 4 semaines →  le document  est en mauvais état → le personnel consigne le livre comme volé détérioré ou perdu.la caution est retournée.
+
+
+
+
+
