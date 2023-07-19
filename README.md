@@ -16,6 +16,19 @@ In this section, you can find an exercise that demonstrates the following:
   - SQL Triggers.
   - Requests using CRUD (Create, Read, Update, Delete).
 
-Additionally, you will find a summary that reflects these topics in a README file.
+Open the .sql on github to see all the request made. 
 
-## Part 2 - 
+## Part 2 - User Interface Components
+
+### Wireframe 
+
+In this section your will find : 
+
+  - An Activity Diagram
+  - An Sequence Diagram
+
+Alongside with a document called EXOSUML that display the specifications document used to accomplish those diagrams. 
+
+### Back End and oriented object programming
+
+In this repository, you will find some very basic objects created in PHP. These are simple programs accessible through GET or SET methods.
