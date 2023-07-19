@@ -34,3 +34,5 @@ Alongside with a document called EXOSUML that display the specifications documen
 ### Back End and oriented object programming
 
 In this repository, you will find some very basic objects created in PHP. These are simple programs accessible through GET or SET methods.
+
+<img src="https://www.zupimages.net/up/23/29/vxy6.jpeg" alt="bannière de fin de readme">
